@@ -54,14 +54,6 @@ class ViewController: UIViewController {
         textFielSenha.delegate = self
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     //Funcoes
     func alerta(_ message: String){
         let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
@@ -112,7 +104,6 @@ class ViewController: UIViewController {
         
         return
     }
-    
 }
 
 // Cria a extension para determinar o comportamento dos delegates
@@ -127,4 +118,3 @@ extension ViewController: UITextFieldDelegate {
         return true
     }
 }
-
