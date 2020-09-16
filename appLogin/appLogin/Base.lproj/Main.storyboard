@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyO-4m-cS3">
+                                <rect key="frame" x="84" y="189" width="247" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="3lR-g7-VUf"/>
+                                    <constraint firstAttribute="height" constant="34" id="7ab-5e-3bc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-pK-gxS">
+                                <rect key="frame" x="84" y="243" width="247" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="T2w-gU-uY7"/>
+                                    <constraint firstAttribute="width" constant="247" id="rFQ-30-KeS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnC-kD-UyH">
+                                <rect key="frame" x="147" y="350" width="79" height="37"/>
+                                <state key="normal" title="Cadastrar"/>
+                                <connections>
+                                    <action selector="btnCadastrarAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3fR-8m-eAK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zf5-I5-X79">
+                                <rect key="frame" x="147" y="312" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="btnLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rWs-gl-y1K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZyO-4m-cS3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4XY-nP-L9W"/>
+                            <constraint firstItem="ZyO-4m-cS3" firstAttribute="leading" secondItem="oAA-pK-gxS" secondAttribute="leading" id="IlP-hi-uRB"/>
+                            <constraint firstItem="fnC-kD-UyH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QGB-vh-1dy"/>
+                            <constraint firstItem="fnC-kD-UyH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aQu-NZ-RPn"/>
+                            <constraint firstItem="oAA-pK-gxS" firstAttribute="top" secondItem="ZyO-4m-cS3" secondAttribute="bottom" constant="20" id="dpD-NU-1Zt"/>
+                            <constraint firstItem="ZyO-4m-cS3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="145" id="e9d-hz-ydA"/>
+                            <constraint firstItem="ZyO-4m-cS3" firstAttribute="trailing" secondItem="oAA-pK-gxS" secondAttribute="trailing" id="i69-M3-Nae"/>
+                            <constraint firstItem="ZyO-4m-cS3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="tkA-TJ-gYe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnCadastrar" destination="fnC-kD-UyH" id="D7y-Jj-NEg"/>
+                        <outlet property="btnLogin" destination="Zf5-I5-X79" id="u85-HK-gPh"/>
+                        <outlet property="textFielEmail" destination="ZyO-4m-cS3" id="zv3-NZ-va1"/>
+                        <outlet property="textFielSenha" destination="oAA-pK-gxS" id="rJY-10-e34"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+</document>
