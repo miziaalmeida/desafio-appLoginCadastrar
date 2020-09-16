@@ -8,32 +8,11 @@
 
 import UIKit
 
-class Usuario {
-    private var email: String
-    private var senha: String
-    
-    init(email: String, senha: String) {
-        self.email = email
-        self.senha = senha
-    }
-    
-    func getEmail() -> String {
-        return self.email
-    }
-    func getSenha() -> String {
-        return self.senha
-    }
-    func setEmail(_ email:String){
-        self.email = email
-    }
-    func setSenha(_ senha: String){
-        self.senha = senha
-    }
-}
-
+// MARK: ViewController
 class ViewController: UIViewController {
     
     var usuariosCadastrados = [Usuario]()
+    
     
     @IBOutlet weak var textFielEmail: UITextField!
     @IBOutlet weak var textFielSenha: UITextField!
