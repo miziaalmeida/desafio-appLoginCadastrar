@@ -10,30 +10,33 @@ import UIKit
 
 // MARK: ViewController
 class ViewController: UIViewController {
+
+// MARK: Outlets
+    @IBOutlet weak var textFieldEmail: UITextField!
+    @IBOutlet weak var textFieldSenha: UITextField!
     
+// MARK: Properties
     var usuariosCadastrados = [Usuario]()
     
-    
-    @IBOutlet weak var textFielEmail: UITextField!
-    @IBOutlet weak var textFielSenha: UITextField!
-    @IBOutlet weak var btnLogin: UIButton!
-    @IBOutlet weak var btnCadastrar: UIButton!
-    
-    
+// MARK: Actions
     @IBAction func btnLoginAction(_ sender: Any) {
+        if verificar()
     }
     
     @IBAction func btnCadastrarAction(_ sender: Any) {
     }
     
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        textFielEmail.delegate = self
-        textFielSenha.delegate = self
+    super.viewDidLoad()
+
+    textFieldEmail.delegate = self
+    textFieldSenha.delegate = self
+    
     }
     
-    //Funcoes
+    // MARK: Funcoes
+    
     func alerta(_ message: String){
         let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel){
@@ -44,8 +47,8 @@ class ViewController: UIViewController {
     }
     
     func limpa() {
-        textFielEmail.text = ""
-        textFielSenha.text = ""
+        textFieldEmail.text = ""
+        textFieldSenha.text = ""
     }
 
     func logar(){
@@ -74,7 +77,7 @@ class ViewController: UIViewController {
                         return
             }
         }
-        let usuario = Usuario(email: textFielEmail.text!, senha: textFielSenha.text!)
+        let usuario = Usuario(email: textFieldEmail.text!, senha: textFieldSenha.text!)
         usuariosCadastrados.append(usuario)
         
         limpa()
@@ -83,17 +86,27 @@ class ViewController: UIViewController {
         
         return
     }
+    
+    private func verificar() -> Bool {
+        if textFieldEmail == nil{
+            return false
+        }
+        if textFieldSenha.text == nil || textFieldSenha.text!.isEmpty {
+            return false
+        }
+        return true
+    }
+    
+    
+    
 }
 
 // Cria a extension para determinar o comportamento dos delegates
 extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == textFielEmail {
-            textFielSenha.becomeFirstResponder()
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == textFieldEmail {
+            if let email = textFieldEmail.text, !email.isEmpty {
+            }
         }
-        else {
-            view.endEditing(true)
-        }
-        return true
     }
 }

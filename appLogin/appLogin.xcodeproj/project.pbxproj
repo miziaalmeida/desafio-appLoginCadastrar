@@ -61,11 +61,11 @@
 				195E108625119C01008BD71A /* AppDelegate.swift */,
 				195E108825119C01008BD71A /* SceneDelegate.swift */,
 				195E108A25119C01008BD71A /* ViewController.swift */,
+				1968227B251234C50021C4CE /* Usuario.swift */,
 				195E108C25119C01008BD71A /* Main.storyboard */,
 				195E108F25119C06008BD71A /* Assets.xcassets */,
 				195E109125119C06008BD71A /* LaunchScreen.storyboard */,
 				195E109425119C06008BD71A /* Info.plist */,
-				1968227B251234C50021C4CE /* Usuario.swift */,
 			);
 			path = appLogin;
 			sourceTree = "<group>";

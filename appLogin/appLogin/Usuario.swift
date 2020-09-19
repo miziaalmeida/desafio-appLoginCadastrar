@@ -16,17 +16,4 @@ class Usuario {
         self.email = email
         self.senha = senha
     }
-    
-    func getEmail() -> String {
-        return self.email
-    }
-    func getSenha() -> String {
-        return self.senha
-    }
-    func setEmail(_ email:String){
-        self.email = email
-    }
-    func setSenha(_ senha: String){
-        self.senha = senha
-    }
 }

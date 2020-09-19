@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +11,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyO-4m-cS3">
-                                <rect key="frame" x="84" y="189" width="247" height="34"/>
+                                <rect key="frame" x="84" y="145" width="432" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="3lR-g7-VUf"/>
                                     <constraint firstAttribute="height" constant="34" id="7ab-5e-3bc"/>
@@ -25,7 +24,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-pK-gxS">
-                                <rect key="frame" x="84" y="243" width="247" height="34"/>
+                                <rect key="frame" x="84" y="199" width="432" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="T2w-gU-uY7"/>
                                     <constraint firstAttribute="width" constant="247" id="rFQ-30-KeS"/>
@@ -65,8 +64,8 @@
                     <connections>
                         <outlet property="btnCadastrar" destination="fnC-kD-UyH" id="D7y-Jj-NEg"/>
                         <outlet property="btnLogin" destination="Zf5-I5-X79" id="u85-HK-gPh"/>
-                        <outlet property="textFielEmail" destination="ZyO-4m-cS3" id="zv3-NZ-va1"/>
-                        <outlet property="textFielSenha" destination="oAA-pK-gxS" id="rJY-10-e34"/>
+                        <outlet property="textFieldEmail" destination="ZyO-4m-cS3" id="zv3-NZ-va1"/>
+                        <outlet property="textFieldSenha" destination="oAA-pK-gxS" id="rJY-10-e34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
