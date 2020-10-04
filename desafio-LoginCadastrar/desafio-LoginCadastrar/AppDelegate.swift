@@ -1,14 +1,13 @@
 //
 //  AppDelegate.swift
-//  appLogin
+//  desafio-LoginCadastrar
 //
-//  Created by Mizia Lima on 9/15/20.
-//  Copyright © 2020 Mizia Lima. All rights reserved.
+//  Created by Mizia Lima on 10/3/20.
 //
 
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 

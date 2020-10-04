@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="desafio_LoginCadastrar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZp-Om-Wxb">
+                                <rect key="frame" x="60" y="244" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQ7-3u-xBn">
+                                <rect key="frame" x="60" y="283" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2H-m5-HlA">
+                                <rect key="frame" x="188" y="390" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="buttonActionLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iVB-wu-lC3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRA-wX-L01">
+                                <rect key="frame" x="173" y="357" width="68" height="30"/>
+                                <state key="normal" title="Cadastrar"/>
+                                <connections>
+                                    <action selector="buttonActionCadastrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PPw-yj-MdO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OQ7-3u-xBn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9Kh-ng-OAg"/>
+                            <constraint firstItem="jRA-wX-L01" firstAttribute="top" secondItem="OQ7-3u-xBn" secondAttribute="bottom" constant="40" id="FNS-9a-APG"/>
+                            <constraint firstItem="jRA-wX-L01" firstAttribute="centerX" secondItem="k2H-m5-HlA" secondAttribute="centerX" id="GdN-4C-n0I"/>
+                            <constraint firstItem="AZp-Om-Wxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="IlY-2d-oBz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AZp-Om-Wxb" secondAttribute="trailing" constant="60" id="Oeb-a0-4BS"/>
+                            <constraint firstItem="jRA-wX-L01" firstAttribute="centerX" secondItem="OQ7-3u-xBn" secondAttribute="centerX" id="S5p-EW-2fY"/>
+                            <constraint firstItem="AZp-Om-Wxb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="UMy-OA-WQL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OQ7-3u-xBn" secondAttribute="trailing" constant="60" id="VVv-9N-9P3"/>
+                            <constraint firstItem="k2H-m5-HlA" firstAttribute="top" secondItem="jRA-wX-L01" secondAttribute="bottom" constant="3" id="WOo-mS-YFp"/>
+                            <constraint firstItem="k2H-m5-HlA" firstAttribute="top" secondItem="jRA-wX-L01" secondAttribute="bottom" constant="3" id="qun-hR-f8S"/>
+                            <constraint firstItem="OQ7-3u-xBn" firstAttribute="top" secondItem="AZp-Om-Wxb" secondAttribute="bottom" constant="5" id="uFG-EN-gyp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonCadastrarOutlet" destination="jRA-wX-L01" id="ky7-7o-ZoJ"/>
+                        <outlet property="buttonLoginOutlet" destination="k2H-m5-HlA" id="NbU-km-njc"/>
+                        <outlet property="textFieldEmail" destination="AZp-Om-Wxb" id="G9X-JA-ubz"/>
+                        <outlet property="textFieldSenha" destination="OQ7-3u-xBn" id="1ux-nv-7b5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="60.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

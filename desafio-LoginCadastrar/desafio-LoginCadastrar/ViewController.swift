@@ -1,41 +1,39 @@
 //
 //  ViewController.swift
-//  appLogin
+//  desafio-LoginCadastrar
 //
-//  Created by Mizia Lima on 9/15/20.
-//  Copyright © 2020 Mizia Lima. All rights reserved.
+//  Created by Mizia Lima on 10/3/20.
 //
 
 import UIKit
 
-// MARK: ViewController
 class ViewController: UIViewController {
-
-// MARK: Outlets
+    var arrayUsuarios = [Usuario]()
+    
+    //MARK: Outlets
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldSenha: UITextField!
+    @IBOutlet weak var buttonCadastrarOutlet: UIButton!
+    @IBOutlet weak var buttonLoginOutlet: UIButton!
     
-// MARK: Properties
-    var usuariosCadastrados = [Usuario]()
-    
-// MARK: Actions
-    @IBAction func btnLoginAction(_ sender: Any) {
-        if verificar()
+    //MARK: Actions
+    @IBAction func buttonActionCadastrar(_ sender: Any) {
+        cadastrar()
+    }
+    @IBAction func buttonActionLogin(_ sender: Any) {
+        logar()
     }
     
-    @IBAction func btnCadastrarAction(_ sender: Any) {
-    }
-    
-    
+    //MARK: viewDidLoad
     override func viewDidLoad() {
-    super.viewDidLoad()
-
-    textFieldEmail.delegate = self
-    textFieldSenha.delegate = self
-    
+        super.viewDidLoad()
+        
+        buttonCadastrarOutlet.isEnabled = true
+        
+        textFieldEmail.delegate = self
+        textFieldSenha.delegate = self
+        
     }
-    
-    // MARK: Funcoes
     
     func alerta(_ message: String){
         let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
@@ -50,35 +48,36 @@ class ViewController: UIViewController {
         textFieldEmail.text = ""
         textFieldSenha.text = ""
     }
-
+    
     func logar(){
-        for i in usuariosCadastrados {
-            if(i.getEmail() == textFielEmail.text){
-                if(i.getSenha() == textFielSenha.text){
+        for i in arrayUsuarios {
+            if(i.getEmail() == textFieldEmail.text){
+                if(i.getSenha() == textFieldSenha.text){
                     limpa()
                     
                     alerta("Login realizado!")
                     return
                 }
                 else {
-                alerta("Senha incorreta!")
-                return
+                    alerta("Senha incorreta!")
+                    return
+                }
             }
         }
-    }
         alerta("Usuário não cadastrado!")
+        limpa()
         return
     }
     
     func cadastrar(){
-        for i in usuariosCadastrados {
-                if(i.getEmail() == textFielEmail.text!){
-                    alerta("Usuário com cadastro existente!")
-                        return
+        for i in arrayUsuarios {
+            if(i.getEmail() == textFieldEmail.text!){
+                alerta("Usuário com cadastro existente!")
+                return
             }
         }
         let usuario = Usuario(email: textFieldEmail.text!, senha: textFieldSenha.text!)
-        usuariosCadastrados.append(usuario)
+        arrayUsuarios.append(usuario)
         
         limpa()
         
@@ -96,17 +95,17 @@ class ViewController: UIViewController {
         }
         return true
     }
-    
-    
-    
 }
 
-// Cria a extension para determinar o comportamento dos delegates
-extension ViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+
+extension ViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == textFieldEmail {
-            if let email = textFieldEmail.text, !email.isEmpty {
-            }
+            textFieldSenha.becomeFirstResponder()
         }
+        else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
 }
